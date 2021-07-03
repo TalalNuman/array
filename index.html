@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text" value="12" ></input>
+    <input type="text" value="21"></input>
+    <input type="text" value="11"></input>
+    <input type="text" value="16"></input>
+
+    <button  id="button1"  onclick="add_element_to_array();"> ADD</button>
+    <button  id="button2"  onclick="display();">DISPLAY</button> 
+
+    <p id="p"></p>
+    <div id="min"></div>
+    <div id="max"></div>
+    <div id="sum"></div>
+
+    <script src="dist/app.js"></script>
+    <script>
+        var x = 0;
+        var array = Array();
+
+        function add_element_to_array() {
+            array[x] = parseInt(document.getElementById("text1").value);
+            document.querySelector("#p").innerHTML = ` ${array[x]} is added in your Array at index ${x}`;
+            x++;
+            document.querySelector("#text1").value = "";
+        }
+        // document.querySelectorAll('input')
+
+        function display(){
+            document.querySelector("#p").innerHTML = `The Elements of the Array are [${array}]`;
+
+            document.querySelector("#min").innerHTML = `And the minimum value of the Array is ${min(array)}`;
+            document.querySelector("#max").innerHTML = `And the maximum value of the Array is ${max(array)}`;
+            document.querySelector("#sum").innerHTML = `And the sum of the Array is ${sum(array)}`;
+            
+        }
+
+    </script>
+</body>
+
+</html>
